@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator | FocalX V.7 Task 5-1</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- Bootstrap Css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header>
+        <!-- navS tart -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Task 5</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#hero">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#calculator">Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#unit-converter">Unit Converter</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- nav End -->
+        <section id="hero" class="hero">
+            <div class="container-fluid">
+                <h1>Welcom to Ahmad Fwity <span>Task 5</span></h1>
+            </div>
+        </section>
+    </header>
+    <!-- Header End -->
+    <!-- Main Start -->
+    <main>
+        <!-- Calculator Start -->
+        <section id="calculator" class="calculator">
+            <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+                <div class="section-title text-center p-2 m-2">
+                    <h2 class="fs-1 p-2">
+                        Calculator
+                    </h2>
+                </div>
+                <div class="container-fluid">
+                    <div class="row my-3 d-flex mb-0 justify-content-center align-content-center py-3 w-100">
+                        <input class="screen col-10 py-3 mb-0" type="text" readonly>
+                    </div>
+                    <div class="row d-flex justify-content-center align-content-center py-3 w-100">
+                        <button onclick="printOnScreen('7')" class="btn btn-primary col-2">7</button>
+                        <button onclick="printOnScreen('8')" class="btn btn-primary col-2">8</button>
+                        <button onclick="printOnScreen('9')" class="btn btn-primary col-2">9</button>
+                        <button onclick="printOnScreen('/')" class="btn btn-primary btn-operator col-2">/</button>
+                        <button onclick="printOnScreen('tan')" class="btn btn-primary btn-operator col-2">tan</button>
+                    </div>
+                    <div class="row d-flex justify-content-center align-content-center py-3 w-100">
+                        <button onclick="printOnScreen('4')" class="btn btn-primary col-2">4</button>
+                        <button onclick="printOnScreen('5')" class="btn btn-primary col-2">5</button>
+                        <button onclick="printOnScreen('6')" class="btn btn-primary col-2">6</button>
+                        <button onclick="printOnScreen('*')" class="btn btn-primary btn-operator col-2">X</button>
+                        <button onclick="printOnScreen('cos')" class="btn btn-primary btn-operator col-2">cos</button>
+                    </div>
+                    <div class="row d-flex justify-content-center align-content-center py-3 w-100">
+                        <button onclick="printOnScreen('1')" class="btn btn-primary col-2">1</button>
+                        <button onclick="printOnScreen('2')" class="btn btn-primary col-2">2</button>
+                        <button onclick="printOnScreen('3')" class="btn btn-primary col-2">3</button>
+                        <button onclick="printOnScreen('-')" class="btn btn-primary btn-operator col-2"
+                            value="-">-</button>
+                        <button onclick="printOnScreen('sin()')" class="btn btn-primary btn-operator col-2"
+                            value="sin">sin</button>
+                    </div>
+                    <div class="row d-flex justify-content-center align-content-center py-3 w-100">
+                        <button onclick="printOnScreen('(')" class="btn btn-primary col-2">(</button>
+                        <button onclick="printOnScreen(')')" class="btn btn-primary col-2">)</button>
+                        <button onclick="printOnScreen('0')" class="btn btn-primary col-2">0</button>
+                        <button onclick="printOnScreen('+')" class="btn btn-primary btn-operator col-2"
+                            value="+">+</button>
+                        <button onclick="Calc()" class="btn btn-primary btn-operator col-2">=</button>
+                    </div>
+                    <div class="row d-flex justify-content-center align-content-center py-3 w-100">
+                        <button onclick="clearScreen()" class="btn btn-primary btn-operator col-2">C</button>
+                        <button onclick="deleteLast()" class="btn btn-primary btn-operator col-2"
+                            value="del">Del</button>
+                        <button onclick="printOnScreen('.')" class="btn btn-primary btn-operator col-2"
+                            value=".">.</button>
+                        <button onclick="printOnScreen('+')" class="btn btn-primary btn-operator col-2"
+                            value="+">+</button>
+                        <button onclick="lastAns()" class="btn btn-primary btn-operator col-2">Ans</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Calculator End -->
+        <!-- Unit Converter Start -->
+        <section id="unit-converter" class="unit-converter">
+            <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+                <div class="section-title text-center p-2 m-2">
+                    <h2 class="fs-1 p-2">
+                        Unit Converter
+                    </h2>
+                </div>
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <label for="from" class="form-label">
+                            <p class="label-title text-center fs-3">From:</p>
+                        </label>
+                        <select name="from" id="from" class="from form-control">
+                            <option class="km" value="km">km</option>
+                            <option class="m" value="m">m</option>
+                            <option class="cm" value="cm">cm</option>
+                        </select>
+                        <input type="number" class="number-one form-control mt-3">
+                    </div>
+                    <div class="mb-3">
+                        <label for="to" class="form-label">
+                            <p class="label-title text-center fs-3">To:</p>
+                        </label>
+                        <select name="to" id="to" class="to form-control">
+                            <option class="km" value="km">km</option>
+                            <option class="m" value="m">m</option>
+                            <option class="cm" value="cm">cm</option>
+                        </select>
+                        <button onclick="convertUnit()" class="btn btn-primary btn-operator mt-3">Convert</button>
+                    </div>
+                    <div class="mb-3">
+                        <label for="result" class="form-label">
+                            <p class="label-title text-center fs-3">Result:</p>
+                        </label>
+                        <input type="number" name="result" class="result form-control" readonly>
+                    </div>
+
+                    <button onclick="clearResult()" class="btn btn-primary btn-operator">Clear</button>
+                </div>
+            </div>
+        </section>
+        <!-- Unit Converter End -->
+    </main>
+    <!-- Main End -->
+
+    <!-- Footer Start -->
+    <footer id="footer" class="position-relative footer bg-dark text-white py-3">
+        <div class="container-fluid">
+            <div class="social-links text-center d-flex align-items-center justify-content-center mt-4">
+                <a class="d-flex justify-content-center align-items-center m-1 p-2" href="#"><i
+                        class="fa-brands fa-twitter fs-4"></i></a>
+                <a class="d-flex justify-content-center align-items-center m-1 p-2"
+                    href="https://www.facebook.com/ahmad.fwity"><i class="fa-brands fa-facebook fs-4"></i></a>
+                <a class="d-flex justify-content-center align-items-center m-1 p-2"
+                    href="https://www.instagram.com/ahmad.fwity/"><i class="fa-brands fa-instagram fs-4"></i></a>
+                <a class="d-flex justify-content-center align-items-center m-1 p-2"
+                    href="https://www.linkedin.com/in/ahmad-fwity/"><i class="fa-brands fa-linkedin fs-4"></i></a>
+            </div>
+        </div>
+        <div class="container-fluid text-center bg-dark">
+            <p>&copy; Copyright All Rights Reserved</p>
+            <div class="credits fs-6">
+                Designed by <a class="fs-5" href="https://www.linkedin.com/in/ahmad-fwity/"> Ahmad Fwity</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Bootstrap Js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main Js -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
